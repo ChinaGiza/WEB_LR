@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineHost — Minecraft-сервер без боли и настройки</title>
+    <meta name="description" content="Разверни сервер Vanilla, Forge или Paper в один клик.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Прогресс-бар прокрутки -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header__inner">
+        <a href="#" class="logo" aria-label="MineHost — на главную">
+            <svg class="logo__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect width="32" height="32" rx="4" fill="#15803d"/>
+                <rect x="6" y="6" width="8" height="8" fill="#fff"/>
+                <rect x="18" y="6" width="8" height="8" fill="#fff" opacity=".6"/>
+                <rect x="6" y="18" width="8" height="8" fill="#fff" opacity=".6"/>
+                <rect x="18" y="18" width="8" height="8" fill="#fff"/>
+            </svg>
+            <span>MineHost</span>
+        </a>
+
+        <!-- Десктопная навигация -->
+        <nav class="nav" aria-label="Основная навигация">
+            <a href="#features" class="nav__link">Возможности</a>
+            <a href="#how" class="nav__link">Как это работает</a>
+            <a href="#reviews" class="nav__link">Отзывы</a>
+            <a href="#cta" class="btn btn--primary btn--sm">Начать</a>
+        </nav>
+
+        <div class="header__actions">
+            <!-- Кнопка переключения темы -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему" type="button">
+                <span class="theme-toggle__icon" id="themeIcon"></span>
+            </button>
+
+            <!-- Кнопка бургер-меню -->
+            <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" type="button">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Закрыть меню" type="button"></button>
+    <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <a href="#features" class="mobile-menu__link">Возможности</a>
+        <a href="#how" class="mobile-menu__link">Как это работает</a>
+        <a href="#reviews" class="mobile-menu__link">Отзывы</a>
+        <a href="#cta" class="btn btn--primary btn--lg mobile-menu__cta">Начать</a>
+    </nav>
+</div>
+
+<main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero__parallax-bg" aria-hidden="true"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title animate-on-scroll">Твой Minecraft-сервер без боли и настройки</h1>
+            <p class="hero__subtitle animate-on-scroll">Разверни сервер Vanilla, Forge или Paper в один клик. Автоматическая установка модов, защита от DDoS и панель управления 24/7.</p>
+
+            <div class="hero__actions animate-on-scroll">
+                <a href="#cta" class="btn btn--primary btn--lg">Создать сервер бесплатно</a>
+                <a href="#how" class="btn btn--secondary">Как это работает</a>
+            </div>
+
+            <div class="hero__stats animate-on-scroll" role="list">
+                <div class="stat" role="listitem">
+                    <div class="stat__value">99.9%</div>
+                    <div class="stat__label">аптайм</div>
+                </div>
+                <div class="stat" role="listitem">
+                    <div class="stat__value">12 000+</div>
+                    <div class="stat__label">серверов запущено</div>
+                </div>
+                <div class="stat" role="listitem">
+                    <div class="stat__value">24/7</div>
+                    <div class="stat__label">поддержка</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Почему MineHost</h2>
+            <p class="section-subtitle animate-on-scroll">Все, что нужно админу — в одном месте</p>
+
+            <div class="features__grid">
+                <article class="feature animate-on-scroll">
+                    <div class="feature__head">
+                        <div class="feature__icon" aria-hidden="true"></div>
+                        <h3 class="feature__title">Мгновенный запуск</h3>
+                    </div>
+                    <p class="feature__text">Сервер разворачивается за 60 секунд. Никаких VPS, SSH и ручной настройки.</p>
+                </article>
+
+                <article class="feature animate-on-scroll">
+                    <div class="feature__head">
+                        <div class="feature__icon" aria-hidden="true">🛡️</div>
+                        <h3 class="feature__title">Защита от DDoS</h3>
+                    </div>
+                    <p class="feature__text">Фильтрация трафика на уровне L3/L4. Сервер всегда онлайн, даже под атакой.</p>
+                </article>
+
+                <article class="feature animate-on-scroll">
+                    <div class="feature__head">
+                        <div class="feature__icon" aria-hidden="true"></div>
+                        <h3 class="feature__title">Авто-установка модов</h3>
+                    </div>
+                    <p class="feature__text">Каталог из 500+ модов и сборок. Один клик — и Forge, Fabric или Paper готовы.</p>
+                </article>
+
+                <article class="feature animate-on-scroll">
+                    <div class="feature__head">
+                        <div class="feature__icon" aria-hidden="true">💬</div>
+                        <h3 class="feature__title">Поддержка 24/7</h3>
+                    </div>
+                    <p class="feature__text">Живые админы в Discord и Telegram. Средний ответ — 3 минуты.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--alt" id="how">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Как это работает</h2>
+            <p class="section-subtitle animate-on-scroll">Три простых шага до своего сервера</p>
+
+            <ol class="how__list">
+                <li class="how__step animate-on-scroll">
+                    <div class="how__step-head">
+                        <span class="how__number">01</span>
+                        <h3 class="how__title">Выбери сборку</h3>
+                    </div>
+                    <p class="how__step-body">Vanilla, Paper, Forge, Fabric, Bedrock — выбери ядро и версию Minecraft.</p>
+                </li>
+                <li class="how__step animate-on-scroll">
+                    <div class="how__step-head">
+                        <span class="how__number">02</span>
+                        <h3 class="how__title">Настрой моды</h3>
+                    </div>
+                    <p class="how__step-body">Установи моды из каталога в один клик. Мы сами разрешим конфликты зависимостей.</p>
+                </li>
+                <li class="how__step animate-on-scroll">
+                    <div class="how__step-head">
+                        <span class="how__number">03</span>
+                        <h3 class="how__title">Пригласи друзей</h3>
+                    </div>
+                    <p class="how__step-body">Отправь IP-адрес друзьям. Готово — сервер работает, ты играешь.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Отзывы админов</h2>
+
+            <div class="reviews__grid">
+                <blockquote class="review animate-on-scroll">
+                    <p class="review__text">DDoS-атаки были каждую неделю. С MineHost — тишина. Поддержка реагирует моментально.</p>
+                    <footer class="review__author">— Степан, владелец серверов</footer>
+                </blockquote>
+
+                <blockquote class="review animate-on-scroll">
+                    <p class="review__text">Установка модов — это магия. Раньше тратил час на зависимости, теперь — один клик.</p>
+                    <footer class="review__author">— PWGood, стример</footer>
+                </blockquote>
+
+                <blockquote class="review animate-on-scroll">
+                    <p class="review__text">Перешёл с VPS на MineHost — и забыл про ночи с консолью. Сервер живёт сам, а я играю с друзьями.</p>
+                    <footer class="review__author">— NeadApTor, админ MineShield</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2 class="cta__title animate-on-scroll">Готов запустить свой сервер?</h2>
+            <p class="cta__text animate-on-scroll">Первые 3 дня — бесплатно. Без карты, без обязательств.</p>
+            <a href="#" class="btn btn--white btn--lg animate-on-scroll">Создать сервер бесплатно</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <p class="footer__copy">© 2026 MineHost. Сделано для копателей онлайн.</p>
+        <nav class="footer__nav" aria-label="Дополнительная навигация">
+            <a href="#" class="footer__link">Политика конфиденциальности</a>
+            <a href="#" class="footer__link">Условия использования</a>
+            <a href="#" class="footer__link">Контакты</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
